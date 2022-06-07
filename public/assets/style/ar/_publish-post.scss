@@ -1,0 +1,205 @@
+.publish-post {
+    width: 100%;
+    height: auto;
+
+    .publish-post_container {
+        width: 50em;
+        margin: auto;
+        display: flex;
+
+        .publish-post_links {
+            flex: 1;
+            margin-left: 3em;
+
+            h2 {
+                font-size: 1.3rem;
+                font-weight: 700;
+                margin-bottom: 1em;
+                text-transform: capitalize;
+                padding-bottom: 0.4em;
+                border-bottom: 2px solid $darkColor;
+            }
+
+            span {
+                display: block;
+                font-size: 0.95rem;
+                text-transform: capitalize;
+                color: $darkColor;
+                margin-bottom: 0.5rem;
+
+                &.active {
+                    text-decoration: underline;
+                }
+
+                a {
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .publish-post_form {
+            flex: 3;
+            display: grid;
+
+            .publish-post_header {
+                margin-bottom: 0.5em;
+                width: 100%;
+
+                h2 {
+                    font-weight: 800;
+                    font-size: 1.3rem;
+                    text-transform: capitalize;
+                    color: $darkColor;
+                    letter-spacing: 1px;
+                }
+            }
+
+            form {
+                width: 100%;
+                display: block;
+                border: 5px solid $secondMainColor;
+                padding: 3em 2em;
+                border-radius: 0.5em;
+
+                .row {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 1.5em;
+
+                    .box-input {
+                        width: 100%;
+                        height: auto;
+
+                        .thumbnail-input {
+                            width: 100%;
+                            padding: 0;
+                        }
+
+                        .thumbnail-input::-webkit-file-upload-button {
+                            width: 30%;
+                            height: 100%;
+                            border: 0;
+                            outline: none;
+                            border-radius: 2em;
+                            background: $darkColor;
+                            color: $whiteColor;
+                            font-size: 1rem;
+                            font-weight: 400;
+                            cursor: pointer;
+                        }
+
+                        input {
+                            width: 100%;
+                            height: 3em;
+                            outline: none;
+                            border: 0;
+                            background: $whiteColor;
+                            color: $darkColor;
+                            font-size: 1rem;
+                            border-radius: 2em;
+                            text-align: center;
+                            padding: 0 1em;
+                            font-weight: 600;
+
+                            &::placeholder {
+                                color: $darkColor;
+                                text-transform: uppercase;
+                                font-weight: 800;
+                                font-size: 1rem;
+                            }
+                        }
+
+                        textarea {
+                            width: 100%;
+                            min-height: 5em;
+                            height: 6em;
+                            max-height: 7em;
+                            outline: none;
+                            border: 0;
+                            background: $whiteColor;
+                            color: $darkColor;
+                            font-size: 1rem;
+                            border-radius: 1em;
+                            text-align: center;
+                            padding: 0.5em 1em;
+                            font-weight: 600;
+
+                            &::placeholder {
+                                color: $darkColor;
+                                text-transform: uppercase;
+                                font-weight: 800;
+                                font-size: 1rem;
+                            }
+                        }
+
+                        select {
+                            width: 15em;
+                            height: 2.5em;
+                            font-size: 1rem;
+                            border-radius: 0.5em;
+                            background: $whiteColor;
+                            color: $darkColor;
+                            text-transform: uppercase;
+                            outline: none;
+                            border: 0;
+                            font-weight: 700;
+
+                            &option {
+                                background: rebeccapurple;
+                            }
+                        }
+
+                        .thumbnail {
+                            margin: auto;
+                            margin-top: 1em;
+                            width: 15em;
+                            border-radius: 1em;
+                        }
+                    }
+
+                    .box-input-error {
+                        width: 100%;
+                        padding: 0 1em;
+                        min-height: 1.2em;
+
+                        p {
+                            color: #970f0f;
+                            font-size: 0.85rem;
+                            font-weight: 600;
+                        }
+                    }
+
+                    .box-submit {
+                        width: 100%;
+                        height: auto;
+                        margin-top: 4em;
+
+                        button {
+                            width: 100%;
+                            height: 3em;
+                            text-align: center;
+                            font-size: 1rem;
+                            font-weight: 800;
+                            letter-spacing: 1px;
+                            text-transform: uppercase;
+                            color: $whiteColor;
+                            background: $darkColor;
+                            border: 0;
+                            outline: none;
+                            border-radius: 2em;
+                            transition: all 200ms ease-in;
+
+                            &:hover {
+                                color: $darkColor;
+                                background: $whiteColor;
+                                transform: translateY(-10px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

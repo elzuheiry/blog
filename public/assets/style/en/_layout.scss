@@ -1,0 +1,223 @@
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    background: $darkColor;
+    color: $whiteColor;
+    outline: none;
+    border: 0;
+    padding: 0.3em 1em;
+    cursor: pointer;
+    transition: all 150ms ease-in;
+
+    &:hover {
+        color: $darkColor;
+        background: $whiteColor;
+    }
+}
+
+.flash-message {
+    position: fixed;
+    bottom: 2.5em;
+    right: 1.5em;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    background: $darkColor;
+    color: $whiteColor;
+    z-index: map-get($zIndex, footer);
+
+    p {
+        color: $whiteColor;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+}
+
+.section {
+    padding: 3em 0;
+}
+
+img {
+    max-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+::-webkit-scrollbar {
+    width: 0.8em;
+    background: $darkColor;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $secondMainColor;
+    border-radius: 1em;
+}
+
+.lg-flex {
+    @include breakpoint-up(large) {
+        display: flex;
+    }
+}
+
+.lg-grid {
+    @include breakpoint-up(large) {
+        display: grid;
+    }
+}
+
+.lg-grid-col-6 {
+    @include breakpoint-up(large) {
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 1em;
+    }
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.grid {
+    display: grid;
+}
+
+.lg-grid-col-2 {
+    @include breakpoint-up(large) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2em;
+    }
+}
+
+.lg-grid-col-3 {
+    @include breakpoint-up(large) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1em;
+    }
+}
+
+.grid-col-4 {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2em;
+}
+
+.grid-col-6 {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 1em;
+}
+
+.lg-col-span-3 {
+    @include breakpoint-up(large) {
+        grid-column: span 3;
+    }
+}
+
+.lg-col-span-2 {
+    @include breakpoint-up(large) {
+        grid-column: span 2;
+    }
+}
+
+.col-span-1 {
+    grid-column: span 1;
+}
+
+.lg-p-1 {
+    @include breakpoint-up(large) {
+        padding: 0.5em;
+    }
+}
+
+.lg-p-2 {
+    @include breakpoint-up(large) {
+        padding: 1em;
+    }
+}
+
+.lg-p-3 {
+    @include breakpoint-up(large) {
+        padding: 1.5em;
+    }
+}
+
+.lg-p-4 {
+    @include breakpoint-up(large) {
+        padding: 2em;
+    }
+}
+
+.lg-p-5 {
+    @include breakpoint-up(large) {
+        padding: 2.5em;
+    }
+}
+
+.lg-p-2 {
+    @include breakpoint-up(large) {
+        padding: 1em;
+    }
+}
+
+.lg-fs-1 {
+    @include breakpoint-up(large) {
+        font-size: 1rem;
+    }
+}
+
+.lg-fs-2 {
+    @include breakpoint-up(large) {
+        font-size: 1.5rem;
+    }
+}
+
+.lg-fs-3 {
+    @include breakpoint-up(large) {
+        font-size: 2rem;
+    }
+}
+
+.lg-fs-4 {
+    @include breakpoint-up(large) {
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,80 @@
+.posts {
+    width: 100%;
+
+    .table-container {
+        display: block;
+
+        .table {
+            width: 75%;
+            height: auto;
+            background: transparent;
+            margin: auto;
+            margin-top: 3em;
+            margin-bottom: 3em;
+            border: 0;
+            border-collapse: collapse;
+            border-radius: 1em;
+            overflow: hidden;
+
+            thead {
+                tr {
+                    background: $darkColor;
+
+                    th {
+                        text-transform: uppercase;
+                        color: $whiteColor;
+                        font-weight: 800;
+                        padding: 1.5em 1em;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+
+            tbody {
+                text-align: center;
+                background: $secondMainColor;
+
+                tr {
+                    &:not(:last-child) {
+                        border-bottom: 2px solid $darkColor;
+                    }
+
+                    td {
+                        padding: 1em 0.5em;
+                        border-left: 1px solid $darkColor;
+                        color: $darkColor;
+
+                        .published {
+                            text-transform: capitalize;
+                            font-size: 0.85rem;
+                            font-weight: 500;
+                            color: $whiteColor;
+                            background: $background;
+                            padding: 0.3em 0.3em;
+                            border-radius: 1em;
+                        }
+
+                        .btn-action {
+                            width: 9em;
+                            font-size: 0.95rem;
+                        }
+
+                        .btn-edit {
+                            margin-bottom: 0.5em;
+                        }
+
+                        .post-link {
+                            text-transform: capitalize;
+                            font-size: 1rem;
+                            font-weight: 600;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

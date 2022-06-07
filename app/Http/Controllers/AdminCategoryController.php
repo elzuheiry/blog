@@ -12,7 +12,11 @@ class AdminCategoryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['role:admin'])->only(['index', 'edit', 'create', 'store', 'destroy']);
+        $this->middleware(['role:admin|user'])->only(['index', 'edit', 'create', 'store', 'destroy']);
+        $this->middleware(['permission:category_create'])->only('create');
+        $this->middleware(['permission:category_read'])->only('index');
+        $this->middleware(['permission:category_update'])->only('edit');
+        $this->middleware(['permission:category_delete'])->only('destroy');
     }
 
     public function index()

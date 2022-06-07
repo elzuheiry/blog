@@ -11,7 +11,11 @@ class AdminPostController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['role:admin'])->only(['index', 'edit', 'create', 'store', 'destroy']);
+        $this->middleware(['role:admin|user'])->only(['index', 'edit', 'create', 'store', 'destroy']);
+        $this->middleware(['permission:post_create'])->only('create');
+        $this->middleware(['permission:post_read'])->only('index');
+        $this->middleware(['permission:post_update'])->only('edit');
+        $this->middleware(['permission:post_delete'])->only('destroy');
     }
 
     public function index()

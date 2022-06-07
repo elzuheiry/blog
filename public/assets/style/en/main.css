@@ -1917,6 +1917,101 @@ img {
           transform: translateY(-10px);
 }
 
+.publish-post .publish-post_container .publish-post_form form .nav-tabs {
+  width: 100%;
+  height: auto;
+  margin: 2em 0;
+}
+
+.publish-post .publish-post_container .publish-post_form form .nav-tabs h2 {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-bottom: 1em;
+}
+
+.publish-post .publish-post_container .publish-post_form form .nav-tabs .nav-tabs-head {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1.5em;
+}
+
+.publish-post .publish-post_container .publish-post_form form .nav-tabs .nav-tabs-head ul li {
+  display: inline;
+  margin-right: 0.5em;
+}
+
+.publish-post .publish-post_container .publish-post_form form .nav-tabs .nav-tabs-head ul li a {
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.3em 0.7em;
+  border-radius: 0.5em;
+  text-transform: capitalize;
+  color: #121212;
+  cursor: pointer;
+  -webkit-transition: all 150ms ease-in;
+  transition: all 150ms ease-in;
+}
+
+.publish-post .publish-post_container .publish-post_form form .nav-tabs .nav-tabs-head ul li a:hover, .publish-post .publish-post_container .publish-post_form form .nav-tabs .nav-tabs-head ul li a.active {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+.publish-post .publish-post_container .publish-post_form form .nav-tabs .nav-tab-container {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.publish-post .publish-post_container .publish-post_form form .nav-tabs .nav-tab-container .nav-tab {
+  display: none;
+  width: 85%;
+  height: auto;
+  margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.publish-post .publish-post_container .publish-post_form form .nav-tabs .nav-tab-container .nav-tab.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.publish-post .publish-post_container .publish-post_form form .nav-tabs .nav-tab-container .nav-tab .form-group {
+  display: inline-block;
+}
+
+.publish-post .publish-post_container .publish-post_form form .nav-tabs .nav-tab-container .nav-tab .form-group label {
+  margin-right: 0.5em;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.publish-post .publish-post_container .publish-post_form form .nav-tabs .nav-tab-container .nav-tab .form-group input {
+  cursor: pointer;
+}
+
 .posts {
   width: 100%;
 }

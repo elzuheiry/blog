@@ -68,5 +68,15 @@ return [
     'all-categories' => 'كل التصنيفات',
     'all-posts' => 'كل المنشورات',
 
+    'permissions' => 'الصالحيات',
+
+    'create' => 'اضافة',
+    'read' => 'عرض',
+    'update' => 'تعديل',
+    'delete' => 'حذف',
+
+    'edit-author' => 'تحديث المشرف',
+    'all-authors' => 'كل المشرفين',
+
 
 ];

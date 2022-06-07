@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
@@ -51,6 +52,14 @@ Route::group(
 
             Route::get('categories/{category:slug}/edit', [AdminCategoryController::class, 'edit'])->name('edit-category');
             Route::patch('categories/{category:slug}', [AdminCategoryController::class, 'update'])->name('update-category');
+
+            // START ROUTES OF Admins
+            Route::get('authors', [AdminUserController::class, 'index'])->name('all-authors');
+            Route::delete('authors/{user:username}', [AdminUserController::class, 'destroy'])->name('destroy-author');
+
+            Route::get('authors/{user:username}/edit', [AdminUserController::class, 'edit'])->name('edit-author');
+            Route::patch('authors/{user:username}', [AdminUserController::class, 'update'])->name('update-author');
+
 
         });
 

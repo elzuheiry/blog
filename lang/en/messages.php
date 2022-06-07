@@ -63,5 +63,14 @@ return [
     'all-categories' => 'all categories',
     'all-posts' => 'all posts',
 
+    'permissions' => 'permissions',
+
+    'create' => 'create',
+    'read' => 'read',
+    'update' => 'update',
+    'delete' => 'delete',
+
+    'edit-author' => 'edit author',
+    'all-authors' => 'all authors',
 
 ];

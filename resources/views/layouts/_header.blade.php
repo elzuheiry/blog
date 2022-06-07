@@ -31,35 +31,62 @@
                 @endguest
 
                 @auth
-                @if (auth()->user()->hasRole(['admin']))
-                <li class="nav_link" id="users">
-                    @lang('messages.posts') <i class="fa-solid fa-caret-down"></i>
+                    @if (auth()->user()->hasRole(['admin', 'user']))
+                    
+                        @if (auth()->user()->hasPermission(['post_read', 'post_create']))
+                        <li class="nav_link" id="users">
+                            @lang('messages.posts') <i class="fa-solid fa-caret-down"></i>
 
-                    <ul class="nav_links-dropMenu" id="">
-                        <li class="nav_link-dropMenu">
-                            <a href="{{ route('allPosts') }}">@lang('messages.dashbourd')</a>
+                            <ul class="nav_links-dropMenu" id="">
+                                @if (auth()->user()->hasPermission('post_read'))
+                                <li class="nav_link-dropMenu">
+                                    <a href="{{ route('allPosts') }}">@lang('messages.dashbourd')</a>
+                                </li>
+                                @endif
+
+                                @if (auth()->user()->hasPermission('post_create'))
+                                <li class="nav_link-dropMenu">
+                                    <a href="{{ route('publish-post') }}">@lang('messages.publish-post')</a>
+                                </li>
+                                @endif
+                            </ul>
                         </li>
+                        @endif
 
-                        <li class="nav_link-dropMenu">
-                            <a href="{{ route('publish-post') }}">@lang('messages.publish-post')</a>
+                        @if (auth()->user()->hasPermission(['category_read', 'category_create']))
+                        <li class="nav_link" id="users">
+                            @lang('messages.categories') <i class="fa-solid fa-caret-down"></i>
+
+                            <ul class="nav_links-dropMenu" id="">
+                                @if (auth()->user()->hasPermission('category_read'))
+                                <li class="nav_link-dropMenu">
+                                    <a href="{{ route('allCategories') }}">@lang('messages.categories')</a>
+                                </li>
+                                @endif
+
+                                @if (auth()->user()->hasPermission('category_create'))
+                                <li class="nav_link-dropMenu">
+                                    <a href="{{ route('publish-category') }}">@lang('messages.publish-category')</a>
+                                </li>
+                                @endif
+                            </ul>
                         </li>
-                    </ul>
-                </li>
+                        @endif
+                    
 
-                <li class="nav_link" id="users">
-                    @lang('messages.categories') <i class="fa-solid fa-caret-down"></i>
+                        @if (auth()->user()->hasPermission('admin_read'))
+                        <li class="nav_link" id="users">
+                            @lang('messages.authors') <i class="fa-solid fa-caret-down"></i>
 
-                    <ul class="nav_links-dropMenu" id="">
-                        <li class="nav_link-dropMenu">
-                            <a href="{{ route('allCategories') }}">@lang('messages.categories')</a>
+                            <ul class="nav_links-dropMenu" id="">
+                                <li class="nav_link-dropMenu">
+                                    <a href="{{ route('all-authors') }}">@lang('messages.authors')</a>
+                                </li>
+                            </ul>
                         </li>
+                        @endif
 
-                        <li class="nav_link-dropMenu">
-                            <a href="{{ route('publish-category') }}">@lang('messages.publish-category')</a>
-                        </li>
-                    </ul>
-                </li>
-                @endif
+                    @endif
                 @endauth
 
                 <li class="nav_link" id="users">

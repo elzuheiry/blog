@@ -12,9 +12,9 @@ class CreateUserSeeder extends Seeder
     public function run()
     {
         $user = User::create([
-            'name' => 'Admin',
+            'name' => 'Super Admin',
             'username' => 'admin',
-            'email' => 'admin@admin.com',
+            'email' => 'admin@blog.com',
             'password' => 'password!',
         ]);
 

@@ -7,7 +7,7 @@
             <div class="publish-post_links">
                 <h2>@lang('messages.links')</h2>
 
-                <a href="{{ route('allCategories') }}">@lang('messages.all-categories')</a>
+                <span><a href="{{ route('allCategories') }}">@lang('messages.all-categories')</a></span>
 
                 <span class="active">
                     @lang('messages.publish-category')

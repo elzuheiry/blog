@@ -9,6 +9,7 @@
                 <span>
                     <a href="{{ route('allPosts') }}">@lang('messages.all-posts')</a>
                 </span>
+                
                 <span class="active">
                     @lang('messages.publish-post')
                 </span>

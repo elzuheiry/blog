@@ -14,6 +14,8 @@ return [
     'roles_structure' => [
         'admin' => [
             'admin' => 'c,r,u,d',
+            'category' => 'c,r,u,d',
+            'post' => 'c,r,u,d',
         ],
         'user' => []
     ],

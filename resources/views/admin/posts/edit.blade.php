@@ -9,6 +9,10 @@
                 <span>
                     <a href="{{ route('allPosts') }}">@lang('messages.all-posts')</a>
                 </span>
+
+                <span>
+                    @lang('messages.edit-post')
+                </span>
             </div>
             
             <div class="publish-post_form">

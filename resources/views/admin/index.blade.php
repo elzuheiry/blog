@@ -10,29 +10,29 @@
 
     <section class="section posts">
         <div class="table-container">
-            @if ($posts->count())
+            @if ($users->count())
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">@lang('messages.number')</th>
-                        <th scope="col">@lang('messages.title')</th>
+                        <th scope="col">@lang('messages.name')</th>
                         <th scope="col">@lang('messages.status')</th>
                         <th scope="col">@lang('messages.action')</th>
                     </tr>
                 </thead>
                 <tbody>
-                @foreach ($posts as $index => $post)
+                @foreach ($users as $index => $user)
                   <tr>
                       <th scope="row">{{ $index + 1 }}</th>
-                      <td><a href="{{ route('post', $post->slug) }}" class="post-link">{{ $post->title }}</a></td>
-                      <td><p class="published">published</p></td>
+                      <td>{{ $user->name }}</td>
+                      <td><p class="published">{{ $user->hasRole(['admin']) ? 'admin' : 'user' }}</p></td>
                       <td> 
-                        @if (auth()->user()->hasPermission('post_update'))
-                        <a href="{{ route('edit-post', $post->slug) }}" class="btn btn-edit btn-action">@lang('messages.edit')</a>
+                        @if (auth()->user()->hasPermission('admin_update'))
+                        <a href="{{ route('edit-author', $user->username)  }}" class="btn btn-edit btn-action">@lang('messages.edit')</a>
                         @endif
 
-                        @if (auth()->user()->hasPermission('post_delete'))
-                        <form action="{{ route('destroy-post', $post->slug) }}" method="POST">
+                        @if (auth()->user()->hasPermission('admin_delete'))
+                        <form action="{{ route('destroy-author', $user->username) }}" method="POST">
                             @csrf
                             @method('DELETE')
 
@@ -45,11 +45,11 @@
                 </tbody>
             </table>
 
-            {{ $posts->links() }}
+            {{ $users->links() }}
             @else
-            <p>No posts yet. Please check back later.!</p>
+            <p>No authors yet. Please check back later.!</p>
             @endif
         </div>
     </section>
-    
+
 </x-layout>

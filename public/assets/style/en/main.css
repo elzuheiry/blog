@@ -2090,12 +2090,13 @@ img {
 }
 
 .posts .table-container .table tbody tr td .published {
+  display: inline-block;
   text-transform: capitalize;
   font-size: 0.85rem;
   font-weight: 500;
   color: #f1f1f1;
   background: #4d4c7d;
-  padding: 0.3em 0.3em;
+  padding: 0.3em 1em;
   border-radius: 1em;
 }
 

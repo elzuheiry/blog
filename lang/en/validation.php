@@ -167,7 +167,20 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'ar' => [
+            'name' => 'fullname arabic',
+            'title' => 'title arabic',
+            'excerpt' => 'excerpt arabic',
+            'body' => 'body arabic',
+        ],
+        'en' => [
+            'name' => 'fullname english',
+            'title' => 'title english',
+            'excerpt' => 'excerpt english',
+            'body' => 'body english',
+        ],
+    ],
 
 
 

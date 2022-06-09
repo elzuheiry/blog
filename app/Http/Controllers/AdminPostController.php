@@ -6,9 +6,11 @@ use App\Models\Post;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class AdminPostController extends Controller
 {
+    
     public function __construct()
     {
         $this->middleware(['role:admin|user'])->only(['index', 'edit', 'create', 'store', 'destroy']);
@@ -55,8 +57,10 @@ class AdminPostController extends Controller
 
         $file_extension = request("thumbnail") -> getClientOriginalExtension();
         $file_name = time() . "." . $file_extension;
-        $file_path = "pictures-upload/posts/";
-        request()->file('thumbnail')->move($file_path, $file_name);
+                
+        Image::make(request("thumbnail"))->resize(250, null, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save(public_path('pictures-upload/posts/'. $file_name));
 
         $attributes['thumbnail'] = $file_name;
         $attributes['user_id'] = auth()->id();
@@ -102,8 +106,10 @@ class AdminPostController extends Controller
             // STORAGE THE NEW PICTURE OF POST IN FILES
             $file_extension = request("thumbnail") -> getClientOriginalExtension();
             $file_name = time() . "." . $file_extension;
-            $file_path = "pictures-upload/posts/";
-            request()->file('thumbnail')->move($file_path, $file_name);
+                    
+            Image::make(request("thumbnail"))->resize(250, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('pictures-upload/posts/'. $file_name));
 
             // STORAGE THE NEW PICTURE OF POST IN DATABASE
             $attributes['thumbnail'] = $file_name;

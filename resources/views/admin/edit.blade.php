@@ -84,16 +84,6 @@
                         <div class="nav-tab-container permissionsTabs">
 
                             <div class="nav-tab users active" id="users">
-                                <div class="form-group">
-                                    <label for="admin_create">@lang('messages.create')</label>
-                                    <input type="checkbox" 
-                                        id="admin_create"
-                                        value="admin_create"
-                                        name="permissions[]"
-                                        {{ $user->hasPermission('admin_create') ? 'checked' : '' }}
-                                        class="check-box"
-                                    >
-                                </div>
     
                                 <div class="form-group">
                                     <label for="admin_read">@lang('messages.read')</label>

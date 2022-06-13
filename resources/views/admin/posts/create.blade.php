@@ -54,7 +54,7 @@
                             <textarea 
                                 name="{{ $locale . '[excerpt]' }}"
                                 id="excerpt" 
-                                rows="5" 
+                                rows="5"
                                 placeholder="@lang('messages.excerpt-' . $locale)"
                             >{{ old($locale . '.excerpt') }}</textarea>
                         </div>

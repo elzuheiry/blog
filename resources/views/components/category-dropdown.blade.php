@@ -1,4 +1,4 @@
-<div class="home_select" id="category_select">
+<div class="home_select category_select">
     <span>{{ isset($currentCategory) ? $currentCategory->name : 'categories'}}</span>
     <i class="fa-solid fa-caret-down"></i>
 </div>

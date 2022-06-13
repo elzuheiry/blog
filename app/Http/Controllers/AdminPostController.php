@@ -86,39 +86,40 @@ class AdminPostController extends Controller
 
     public function update(Post $post)
     {
+        dd($post);
         // MAKE VALIDATION FOR REQUEST
-        $attributes = request()->validate([
-            'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post)],
-            'thumbnail' => ['image'],
-            'ar.*' => ['required', 'min:3'],
-            'en.*' => ['required', 'min:3'],
-            'ar.title' => ['required', 'min:3', 'max:255', Rule::unique('post_translations', 'title')->ignore($post->id, 'post_id')],
-            'en.title' => ['required', 'min:3', 'max:255', Rule::unique('post_translations', 'title')->ignore($post->id, 'post_id')],
-            'category_id' => ['required', Rule::exists('categories', 'id')],
-        ]);
+        // $attributes = request()->validate([
+        //     'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post)],
+        //     'thumbnail' => ['image'],
+        //     'ar.*' => ['required', 'min:3'],
+        //     'en.*' => ['required', 'min:3'],
+        //     'ar.title' => ['required', 'min:3', 'max:255', Rule::unique('post_translations', 'title')->ignore($post->id, 'post_id')],
+        //     'en.title' => ['required', 'min:3', 'max:255', Rule::unique('post_translations', 'title')->ignore($post->id, 'post_id')],
+        //     'category_id' => ['required', Rule::exists('categories', 'id')],
+        // ]);
 
-        // IF ISSET REQUEST OF THUMBNAIL 
-        if( isset($attributes['thumbnail']) ){
+        // // IF ISSET REQUEST OF THUMBNAIL 
+        // if( isset($attributes['thumbnail']) ){
 
-            // DELETE THE OLD PICTUER OF POST
-            Storage::disk('public_upload')->delete('/posts/' . $post->thumbnail);
+        //     // DELETE THE OLD PICTUER OF POST
+        //     Storage::disk('public_upload')->delete('/posts/' . $post->thumbnail);
             
-            // STORAGE THE NEW PICTURE OF POST IN FILES
-            $file_extension = request("thumbnail") -> getClientOriginalExtension();
-            $file_name = time() . "." . $file_extension;
+        //     // STORAGE THE NEW PICTURE OF POST IN FILES
+        //     $file_extension = request("thumbnail") -> getClientOriginalExtension();
+        //     $file_name = time() . "." . $file_extension;
                     
-            Image::make(request("thumbnail"))->resize(250, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save(public_path('pictures-upload/posts/'. $file_name));
+        //     Image::make(request("thumbnail"))->resize(250, null, function ($constraint) {
+        //         $constraint->aspectRatio();
+        //     })->save(public_path('pictures-upload/posts/'. $file_name));
 
-            // STORAGE THE NEW PICTURE OF POST IN DATABASE
-            $attributes['thumbnail'] = $file_name;
-        }
+        //     // STORAGE THE NEW PICTURE OF POST IN DATABASE
+        //     $attributes['thumbnail'] = $file_name;
+        // }
         
-        // UPDATE THE POSTS WITH NEW VALUES
-        $post->update($attributes);
+        // // UPDATE THE POSTS WITH NEW VALUES
+        // $post->update($attributes);
 
-        // REDIRECT TO DASHBOURD OF POSTS WITH FLASH MESSAGE
-        return redirect()->route('allPosts')->with('success', 'Post Updated!');
+        // // REDIRECT TO DASHBOURD OF POSTS WITH FLASH MESSAGE
+        // return redirect()->route('allPosts')->with('success', 'Post Updated!');
     }
 }
